@@ -11,15 +11,10 @@ const HASH_OPTIONS = {
 const abi = new ethers.AbiCoder();
 
 async function main() {
-  const rawPassword = "examplePassword34%";
-  const password = rawPassword
-    .split("")
-    .filter((v, id) => id % 2 === 0)
-    .join("");
-  const salt = rawPassword
-    .split("")
-    .filter((v, id) => id % 2 === 1)
-    .join("");
+  const password = "examplePassword34%";
+  const passcode = "23a61w";
+
+  const salt = `${password.slice(-4)}${passcode}`;
 
   const passwordBuffer = Buffer.from(password);
   const saltBuffer = Buffer.from(salt);
