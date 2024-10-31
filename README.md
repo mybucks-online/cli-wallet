@@ -9,6 +9,6 @@ cp .env.example .env
 // configure password, passcode, preferred chain ids
 npm install
 
-npm start
+npm run balances
 // this will enlist the account's assets in preferred chains.
 ```
