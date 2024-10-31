@@ -1,26 +1,14 @@
-# Mybucks.online Wallet Private Key Generation
+# Mybucks.online CLI Wallet
 
-This repository showcases the process of **generating a private key** for use in the `MyBucks.Online` wallet.
-
-## User Input
-The application receives two inputs from the user:
-
-- Password
-- Passcode
-
-## Key Generation Process
-The private key is generated using the following cryptographic functions:
-
-- scrypt
-- keccak256
-
-
-Please check `index.js` in this repository for the implementation details.<br/>
-For more details, please refer to [this documentation](https://docs.mybucks.online/concept/how-it-works).
+This is CLI-mode crypto wallet that uses the same mechanism of [app.mybucks.online](https://app.mybucks.online).
 
 ## How to run
 
 ```
+cp .env.example .env
+// configure password, passcode, preferred chain ids
 npm install
+
 npm start
+// this will enlist the account's assets in preferred chains.
 ```
