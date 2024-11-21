@@ -12,15 +12,15 @@ async function main() {
     parseInt(t)
   );
   for (const chainId of preferredChains) {
-    console.log("\nFetching balances of ", EVM_NETWORKS[chainId].label);
+    console.log("\n\nFetching balances of ", EVM_NETWORKS[chainId].label);
     const account = new EvmAccount(hash, chainId);
 
     console.log("Address: ", account.address);
 
     const balances = await account.queryBalances();
-    Object.entries(balances).forEach(([symbol, balance]) => {
-      console.log(symbol, balance);
-    });
+    for (const token of balances) {
+      console.log(token)
+    }
   }
 }
 
