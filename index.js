@@ -19,7 +19,12 @@ async function main() {
 
     const balances = await account.queryBalances();
     for (const token of balances) {
-      console.log(token.symbol, token.balance, token.price)
+      console.log(
+        token.symbol,
+        token.balance,
+        `\t$${token.price}\t`,
+        `${token.native ? "  *" : ""}`
+      );
     }
   }
 }
