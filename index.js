@@ -22,10 +22,23 @@ async function main() {
       console.log(
         token.symbol,
         token.balance,
-        `\t$${token.price}\t`,
+        `\t$${token.price}\t${token.address}\t`,
         `${token.native ? "  *" : ""}`
       );
     }
+
+    console.log(
+      "\n\nFetching transfers history of ",
+      EVM_NETWORKS[chainId].label
+    );
+
+    const history = await account.queryTransfersHistory();
+    console.log(JSON.stringify(history, null, 2));
+
+    const history2 = await account.queryTransfersHistory(
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+    );
+    console.log(JSON.stringify(history2, null, 2));
   }
 }
 
