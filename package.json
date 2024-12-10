@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "balances": "node balances.js",
     "history": "node history.js",
-    "one-link": "node one-link.js"
+    "link-generate": "node link-generate.js",
+    "link-parse": "node link-parse.js"
   },
   "author": "",
   "license": "ISC",
