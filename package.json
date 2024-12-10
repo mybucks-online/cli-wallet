@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "balances": "node index.js",
+    "balances": "node balances.js",
+    "history": "node history.js",
     "one-link": "node one-link.js"
   },
   "author": "",

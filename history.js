@@ -17,17 +17,24 @@ async function main() {
 
     console.log("Address: ", account.address);
 
-    const balances = await account.queryBalances();
-    console.log("\nSymbol \tBalance \tPrice \t\tContract Address");
-    for (const token of balances) {
-      console.log(
-        token.symbol,
-        ' \t',
-        token.balance,
-        `\t$${token.price}\t${token.address}\t`,
-        `${token.native ? "  *" : ""}`
-      );
-    }
+    // fetch native currency history
+    console.log(
+      "\n\nFetching transfers history of native currency at ",
+      EVM_NETWORKS[chainId].label
+    );
+    const history = await account.queryTransfersHistory();
+    console.log(JSON.stringify(history, null, 2));
+/*
+    // fetch erc-20 history
+    console.log(
+      "\n\nFetching transfers history of erc-20 at ",
+      EVM_NETWORKS[chainId].label
+    );
+    const history2 = await account.queryTransfersHistory(
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+    );
+    console.log(JSON.stringify(history2, null, 2));
+*/
   }
 }
 
