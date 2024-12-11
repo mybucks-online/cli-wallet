@@ -11,4 +11,16 @@ npm install
 
 npm run balances
 // this will enlist the account's assets in preferred chains.
+
+npm run history
+// this will enlist the transfer history of in/out native currency in preferred chains.
+
+npm run link-generate
+// this generates a transfer-wallet link
+
+npm run link-parse [link-token]
+// this will parse the token and show embedded params
+
+npm run airdrop
+// this will generate a random account for purpose of airdrop
 ```

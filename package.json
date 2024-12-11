@@ -5,12 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "balances": "node index.js"
+    "airdrop": "node airdrop.js",
+    "balances": "node balances.js",
+    "history": "node history.js",
+    "link-generate": "node link-generate.js",
+    "link-parse": "node link-parse.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@sushiswap/default-token-list": "^43.3.0",
+    "@uniswap/default-token-list": "^12.27.0",
+    "alchemy-sdk": "^3.5.0",
     "buffer": "^6.0.3",
     "dotenv": "^16.4.5",
     "ethers": "^6.13.2",
