@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "airdrop": "node airdrop.js",
     "balances": "node balances.js",
     "history": "node history.js",
     "link-generate": "node link-generate.js",

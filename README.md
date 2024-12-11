@@ -20,4 +20,7 @@ npm run link-generate
 
 npm run link-parse [link-token]
 // this will parse the token and show embedded params
+
+npm run airdrop
+// this will generate a random account for purpose of airdrop
 ```
