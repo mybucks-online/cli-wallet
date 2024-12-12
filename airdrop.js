@@ -14,14 +14,16 @@ async function main() {
   console.log("passcode: ", passcode);
 
   const token = mergeToBase64(password, passcode, "polygon");
-  console.log("\n\ntoken: ");
-  console.log(`https://app.mybucks.online?wallet=${token}`);
 
   const hash = await generateHash(password, passcode);
   const account = new EvmAccount(hash, 137);
 
   console.log("\naddress: ");
   console.log(account.address);
+
+  console.log("\ntoken: ");
+  console.log(`https://app.mybucks.online?wallet=${token}`);
+
   console.log();
 }
 
