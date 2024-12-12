@@ -8,21 +8,23 @@ async function main() {
   const timestamp = `${parseInt(Date.now() / 1000)}`;
   console.log("Generate random credentials at ", timestamp);
 
-  const password = nanoid(14) + "%";
+  const password = nanoid(12) + Math.floor(Math.random() * 99) + "%";
   const passcode = timestamp.slice(-6);
   console.log("password: ", password);
   console.log("passcode: ", passcode);
 
   const token = mergeToBase64(password, passcode, "polygon");
-  console.log("token: ", token);
+  console.log("\n\ntoken: ");
+  console.log(`https://app.mybucks.online?wallet=${token}`);
 
   const hash = await generateHash(password, passcode);
   const account = new EvmAccount(hash, 137);
 
-  console.log("\n\naddress: ", account.address);
+  console.log("\naddress: ");
+  console.log(account.address);
+  console.log();
 }
 
 main().then(() => {
-  console.log("\nfinished.");
   process.exit(0);
 });
